@@ -1,0 +1,27 @@
+{
+  "name": "os-command-injection-lab",
+  "version": "1.0.0",
+  "description": "Educational Cyber Security Lab - OS Command Injection Vulnerabilities & Remediation",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  },
+  "keywords": [
+    "cybersecurity",
+    "lab",
+    "command-injection",
+    "appsec",
+    "education"
+  ],
+  "author": "Halt Academy",
+  "license": "MIT",
+  "devDependencies": {
+    "puppeteer-core": "^25.7.0"
+  }
+}

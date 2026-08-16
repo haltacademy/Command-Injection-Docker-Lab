@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  os-cmd-lab:
+    build: .
+    container_name: os-command-injection-lab
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3

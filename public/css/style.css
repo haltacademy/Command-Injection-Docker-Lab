@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0a0e1a;
+  color: #e2e8f0;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+
+.logo span {
+  color: #38bdf8;
+}
+
+.status {
+  font-size: 0.8rem;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #22c55e;
+  border-radius: 50%;
+}
+
+/* Nav */
+nav {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid #1e293b;
+  padding: 0 2rem;
+}
+
+nav button {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #64748b;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+nav button:hover {
+  color: #cbd5e1;
+}
+
+nav button.active {
+  color: #38bdf8;
+  border-bottom-color: #38bdf8;
+}
+
+/* Content */
+.content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.panel {
+  display: none;
+}
+
+.panel.active {
+  display: block;
+}
+
+/* Level header */
+.level-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.level-desc {
+  color: #94a3b8;
+  font-size: 0.92rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Form */
+.field-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.input-row input {
+  flex: 1;
+  background: #111827;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  color: #e2e8f0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.input-row input:focus {
+  border-color: #38bdf8;
+}
+
+.input-row button {
+  background: #38bdf8;
+  color: #0a0e1a;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+
+.input-row button:hover {
+  opacity: 0.85;
+}
+
+/* Output */
+.output-box {
+  background: #060810;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  min-height: 200px;
+  padding: 1rem 1.25rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  white-space: pre-wrap;
+  word-break: break-all;
+  overflow-y: auto;
+  max-height: 400px;
+  line-height: 1.6;
+}
+
+.output-box .prompt {
+  color: #38bdf8;
+}
+
+.output-box .success {
+  color: #22c55e;
+}
+
+.output-box .error {
+  color: #ef4444;
+}
+
+/* Divider */
+.divider {
+  border: none;
+  border-top: 1px solid #1e293b;
+  margin: 2rem 0;
+}
+
+/* Flag */
+.flag-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #22c55e;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.flag-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.flag-row input {
+  flex: 1;
+  background: #111827;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  color: #22c55e;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.flag-row input:focus {
+  border-color: #22c55e;
+}
+
+.flag-row button {
+  background: #22c55e;
+  color: #0a0e1a;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.25rem;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.flag-msg {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  min-height: 1.25rem;
+}

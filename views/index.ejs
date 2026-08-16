@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">Halt Academy — <span>OS Command Injection</span></div>
+    <div class="status">Container Online</div>
+  </header>
+
+  <nav>
+    <button class="active" data-tab="level1">Level 1</button>
+    <button data-tab="level2">Level 2</button>
+    <button data-tab="level3">Level 3</button>
+    <button data-tab="level4">Level 4</button>
+    <button data-tab="level5">Level 5</button>
+    <button data-tab="level6">Level 6</button>
+  </nav>
+
+  <div class="content">
+
+    <!-- Level 1 -->
+    <div class="panel active" id="view-level1">
+      <h2 class="level-title">Network Ping</h2>
+      <form id="form-level1">
+        <label class="field-label">Host</label>
+        <div class="input-row">
+          <input type="text" id="ping-host" value="127.0.0.1" placeholder="127.0.0.1">
+          <button type="submit">Execute</button>
+        </div>
+      </form>
+      <div class="output-box" id="terminal-l1"><span class="prompt">$</span> Waiting for input...</div>
+      <hr class="divider">
+      <label class="flag-label">Submit Flag</label>
+      <div class="flag-row">
+        <input type="text" id="flag-input-l1" placeholder="FLAG{...}">
+        <button onclick="submitFlag(1)">Submit</button>
+      </div>
+      <div class="flag-msg" id="flag-msg-l1"></div>
+    </div>
+
+    <!-- Level 2 -->
+    <div class="panel" id="view-level2">
+      <h2 class="level-title">File Viewer — Identifying Filters</h2>
+      <form id="form-level2">
+        <label class="field-label">Filename</label>
+        <div class="input-row">
+          <input type="text" id="fileview-name" value="readme.txt" placeholder="readme.txt">
+          <button type="submit">Execute</button>
+        </div>
+      </form>
+      <div class="output-box" id="terminal-l2"><span class="prompt">$</span> Waiting for input...</div>
+      <hr class="divider">
+      <label class="flag-label">Submit Flag</label>
+      <div class="flag-row">
+        <input type="text" id="flag-input-l2" placeholder="FLAG{...}">
+        <button onclick="submitFlag(2)">Submit</button>
+      </div>
+      <div class="flag-msg" id="flag-msg-l2"></div>
+    </div>
+
+    <!-- Level 3 -->
+    <div class="panel" id="view-level3">
+      <h2 class="level-title">DNS Lookup — Filter Bypass</h2>
+      <form id="form-level3">
+        <label class="field-label">Domain</label>
+        <div class="input-row">
+          <input type="text" id="lookup-domain" value="google.com" placeholder="google.com">
+          <button type="submit">Execute</button>
+        </div>
+      </form>
+      <div class="output-box" id="terminal-l3"><span class="prompt">$</span> Waiting for input...</div>
+      <hr class="divider">
+      <label class="flag-label">Submit Flag</label>
+      <div class="flag-row">
+        <input type="text" id="flag-input-l3" placeholder="FLAG{...}">
+        <button onclick="submitFlag(3)">Submit</button>
+      </div>
+      <div class="flag-msg" id="flag-msg-l3"></div>
+    </div>
+
+    <!-- Level 4 -->
+    <div class="panel" id="view-level4">
+      <h2 class="level-title">Log Exporter — Blind Injection</h2>
+      <form id="form-level4">
+        <label class="field-label">Log Type</label>
+        <div class="input-row">
+          <input type="text" id="export-type" value="syslog" placeholder="syslog">
+          <button type="submit">Execute</button>
+        </div>
+      </form>
+      <div class="output-box" id="terminal-l4"><span class="prompt">$</span> Waiting for input...</div>
+      <hr class="divider">
+      <label class="flag-label">Submit Flag</label>
+      <div class="flag-row">
+        <input type="text" id="flag-input-l4" placeholder="FLAG{...}">
+        <button onclick="submitFlag(4)">Submit</button>
+      </div>
+      <div class="flag-msg" id="flag-msg-l4"></div>
+    </div>
+
+    <!-- Level 5 -->
+    <div class="panel" id="view-level5">
+      <h2 class="level-title">User Lookup — Bypassing Blacklisted Characters</h2>
+      <form id="form-level5">
+        <label class="field-label">Username</label>
+        <div class="input-row">
+          <input type="text" id="user-name" value="root" placeholder="root">
+          <button type="submit">Execute</button>
+        </div>
+      </form>
+      <div class="output-box" id="terminal-l5"><span class="prompt">$</span> Waiting for input...</div>
+      <hr class="divider">
+      <label class="flag-label">Submit Flag</label>
+      <div class="flag-row">
+        <input type="text" id="flag-input-l5" placeholder="FLAG{...}">
+        <button onclick="submitFlag(5)">Submit</button>
+      </div>
+      <div class="flag-msg" id="flag-msg-l5"></div>
+    </div>
+
+    <!-- Level 6 -->
+    <div class="panel" id="view-level6">
+      <h2 class="level-title">Process Monitor — Bypassing Blacklisted Commands</h2>
+      <form id="form-level6">
+        <label class="field-label">Process Name</label>
+        <div class="input-row">
+          <input type="text" id="proc-name" value="node" placeholder="node">
+          <button type="submit">Execute</button>
+        </div>
+      </form>
+      <div class="output-box" id="terminal-l6"><span class="prompt">$</span> Waiting for input...</div>
+      <hr class="divider">
+      <label class="flag-label">Submit Flag</label>
+      <div class="flag-row">
+        <input type="text" id="flag-input-l6" placeholder="FLAG{...}">
+        <button onclick="submitFlag(6)">Submit</button>
+      </div>
+      <div class="flag-msg" id="flag-msg-l6"></div>
+    </div>
+
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
